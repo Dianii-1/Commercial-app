@@ -11,7 +11,7 @@ export const useInfiniteScroll = () => {
 
   const [page, setPage] = useState(1);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [hasMore, setHasMore] = useState(true);
 
