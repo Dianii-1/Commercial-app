@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Spinner } from "@heroui/react";
 import { SearchBar } from "@/components/post/SearchBar";
 import { PostCard } from "@/components/post/Card";
 import { useInfiniteScroll } from "@/hook/useInfiniteScoll";
+import { SkeletonPost } from "@/components/post/Skeleton";
 
 export default function PostsPage() {
   const { filteredPosts, hasMore, loading, observerRef, search, setSearch } =
     useInfiniteScroll();
+
   return (
     <main className="min-h-screen bg-gray-50 px-6 py-10">
       <div className="mx-auto max-w-7xl">
@@ -43,8 +45,10 @@ export default function PostsPage() {
         {hasMore && <div ref={observerRef} className="h-10 w-full" />}
 
         {loading && (
-          <div className="mt-10 flex justify-center">
-            <Spinner size="lg" color="accent" />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 3 }).map((_, idx) => (
+              <SkeletonPost key={idx} />
+            ))}
           </div>
         )}
       </div>
