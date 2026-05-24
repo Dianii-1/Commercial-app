@@ -18,14 +18,17 @@ export default function Navbar() {
       <div className="flex items-center gap-4">
         <Link href="/listado">
           <CiViewList size="30px" className="sm:hidden text-[#FAC830]" />
-          <Button variant="outline" className="hidden sm:block font-semibold">
+          <Button
+            variant="outline"
+            className="hidden sm:block font-semibold rounded-full"
+          >
             Publicaciones
           </Button>
         </Link>
 
         <Link href="/listado/nuevo">
           <MdAddComment size="30px" className="sm:hidden text-[#008296]" />
-          <Button className="hidden sm:block bg-[#008296] text-white p-2 px-6 rounded-xl">
+          <Button className="hidden sm:block bg-[#008296] text-white p-2 px-6 rounded-full">
             Nueva publicación
           </Button>
         </Link>

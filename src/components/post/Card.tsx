@@ -45,11 +45,11 @@ export const PostCard = ({ post }: Props) => {
           </Card.Title>
         </Card.Header>
 
-        <div className="flex-1 min-h-1" />
-
-        <Card.Description className="line-clamp-3 text-sm md:text-base text-gray-600 leading-relaxed overflow-hidden">
-          {post.body}
-        </Card.Description>
+        <div className="flex-1">
+          <Card.Description className="line-clamp-3 text-sm md:text-base text-gray-600 leading-relaxed overflow-hidden">
+            {post.body}
+          </Card.Description>
+        </div>
 
         <Card.Footer className="mt-6 flex justify-between items-center shrink-0">
           <Link href={`/listado/${post.id}`}>

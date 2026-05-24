@@ -15,14 +15,14 @@ export default function HomePage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-full sm:max-w-2xl text-md sm:text-xl leading-relaxed text-gray-600">
-          Explora publicaciones de tu interes, y crea nuevas en nuestra
+          Explora publicaciones de tu interés, y crea nuevas en nuestra
           plataforma.
         </p>
 
         <Link href="/listado">
           <Button
             size="lg"
-            className="mt-10 bg-[#008296] p-2 px-6 font-semibold text-white shadow-xl rounded-xl cursor-pointer"
+            className="mt-10 bg-[#008296] p-2 px-6 font-semibold text-white shadow-xl rounded-full cursor-pointer"
           >
             Ver todas las publicaciones
           </Button>
