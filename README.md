@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aplicación para la administración de publicaciones
 
-## Getting Started
+Una aplicación web realizada para la administracion de publicaciones. Construida utilizando la arquitectura de **Next.js App Router**, con un enfoque en mantener el código limpio, tipado fuerte y una cobertura completa de pruebas unitarias y de integración.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologías Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router & Client Components)
+- **Lenguaje:** [TypeScript](https://www.typescript.org/)
+- **Manejo de Estado Global:** [Zustand](https://zustand-demo.pmnd.rs/) (con persistencia local y lógica de IDs virtuales)
+- **Componentes de UI:** [@heroui/react](https://heroui.com/) (Diseño moderno)
+- **Formularios y Validación:** [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) (Esquemas de validación estrictos)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **Pruebas:** [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Development
 
-## Learn More
+Pasos para levantar la app en desarrollo
 
-To learn more about Next.js, take a look at the following resources:
+## Correr en DEV
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clonar el repositorio con el comando `git clone `
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Ejecutar el comando `npm install` para reconstruir los módulos de node e instalar dependencias
 
-## Deploy on Vercel
+3. Limpiar el localstorage del navegador
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Ejecutar el comando `npm run dev` para ejecutar aplicación en desarrollo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Ejecutar el comando `npm run test` para ejecutar los test uniatrios
+
+6. Ejecutar el comando `npm run build` para compilar el proyecto
