@@ -3,7 +3,7 @@
 import { Post } from "@/types/post";
 import { Button, Card } from "@heroui/react";
 import Link from "next/link";
-import EditPostModal from "./EditPostModal";
+import { EditPostModal } from "./EditPostModal";
 import { getPostImage } from "@/hook/useImagePost";
 import Image from "next/image";
 import { DeletePostModal } from "./DeletePostModal";
@@ -36,6 +36,7 @@ export const PostCard = ({ post }: Props) => {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
           priority={post.id <= 3}
+          loading="eager"
         />
       </div>
       <div className="flex flex-1 flex-col p-2 md:p-6">
