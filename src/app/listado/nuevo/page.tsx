@@ -1,54 +1,19 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-
-import { postSchema, PostSchema } from "@/schemas/post.schema";
-
-import { Button, Input, Label, TextArea } from "@heroui/react";
-import { usePostsStore } from "@/store/post.store";
-import { Post } from "@/types/post";
-import { useRouter } from "next/navigation";
+import { Button, Input, Label, Spinner, TextArea } from "@heroui/react";
+import { useCreatePost } from "@/hook/useCreatePost";
 
 export default function NewPostPage() {
-  const addPost = usePostsStore((state) => state.addPost);
-  const localPosts = usePostsStore((state) => state.localPosts);
-  const route = useRouter();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<PostSchema>({
-    resolver: zodResolver(postSchema),
-  });
+  const { errors, handleSubmit, loading, onSubmit, register, route } =
+    useCreatePost();
 
-  const onSubmit = (data: PostSchema) => {
-    const createdPosts = localPosts.filter((post) => post.id >= 10000);
-
-    let newId = 10000;
-
-    if (createdPosts.length > 0) {
-      const maxLocalId = createdPosts.reduce(
-        (max, post) => (post.id > max ? post.id : max),
-        10000
-      );
-      newId = maxLocalId + 1;
-    }
-
-    const newPost: Post = {
-      id: newId,
-      title: data.title.trim(),
-      body: data.body.trim(),
-    };
-
-    setTimeout(() => {
-      addPost(newPost);
-      reset();
-      route.replace("/listado");
-    }, 100);
-  };
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-8 flex justify-center items-center">
+        <Spinner size="xl" color="accent" />
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-gray-50 p-8">
@@ -88,19 +53,17 @@ export default function NewPostPage() {
             )}
           </div>
 
-          <div className="flex flex-col sm:flex gap-4 justify-end">
+          <div className="flex flex-col sm:flex-row gap-4 justify-end">
             <Button
               className="w-full sm:w-auto"
               variant="danger-soft"
               onPress={() => route.replace("/listado")}
-              isDisabled={isSubmitting}
             >
               Cancelar
             </Button>
             <Button
               type="submit"
               className="bg-[#008296] text-white w-full sm:w-auto"
-              isPending={isSubmitting}
             >
               Crear publicación
             </Button>
