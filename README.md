@@ -33,3 +33,7 @@ Pasos para levantar la app en desarrollo
 5. Ejecutar el comando `npm run test` para ejecutar los test uniatrios
 
 6. Ejecutar el comando `npm run build` para compilar el proyecto
+
+# Uso de la aplicación
+
+1. Despues de ejecutar el
