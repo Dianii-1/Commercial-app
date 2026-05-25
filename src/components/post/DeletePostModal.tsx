@@ -9,12 +9,7 @@ export const DeletePostModal = ({ id }: Props) => {
   const deletePost = usePostsStore((state) => state.deletePost);
   return (
     <Modal>
-      <Button
-        size="sm"
-        className="w-14 p-0"
-        variant="danger-soft"
-        // onPress={() => deletePost(post.id)}
-      >
+      <Button size="sm" className="w-14 p-0" variant="danger-soft">
         <IoTrashOutline />
       </Button>
       <Modal.Backdrop
