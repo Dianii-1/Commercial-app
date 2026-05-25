@@ -20,7 +20,7 @@ export const useInfiniteScroll = () => {
   const observerRef = useRef<HTMLDivElement | null>(null);
 
   const getPostsByPagination = useCallback(async () => {
-    if (loading || !hasMore) return;
+    if (!hasMore) return;
 
     setLoading(true);
 
