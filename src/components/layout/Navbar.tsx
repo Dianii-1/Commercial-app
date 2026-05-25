@@ -5,7 +5,7 @@ import { IoHome } from "react-icons/io5";
 import { CiViewList } from "react-icons/ci";
 import { MdAddComment } from "react-icons/md";
 
-export default function Navbar() {
+export const Navbar = () => {
   return (
     <div className="flex items-center justify-between w-full border-b border-gray-200 shadow-lg bg-white/70 backdrop-blur-md p-6">
       <Link
@@ -35,4 +35,4 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};

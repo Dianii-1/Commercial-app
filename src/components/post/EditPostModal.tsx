@@ -14,9 +14,9 @@ interface Props {
   post: Post | null;
 }
 
-export default function EditPostModal({ post }: Props) {
+export const EditPostModal = ({ post }: Props) => {
   const { register, handleSubmit, reset } = useForm<Post>();
-  const { editPost } = usePostsStore();
+  const editPost = usePostsStore((state) => state.editPost);
 
   useEffect(() => {
     if (post) {
@@ -78,4 +78,4 @@ export default function EditPostModal({ post }: Props) {
       </Modal.Backdrop>
     </Modal>
   );
-}
+};

@@ -10,9 +10,8 @@ interface Props {
   }>;
 }
 
-export default function NamePage({ params }: Props) {
+export default function PostById({ params }: Props) {
   const { id } = use(params);
-  console.log(id);
 
   const post = usePostsStore((state) =>
     state.localPosts.find((p) => p.id === Number(id))
@@ -52,6 +51,7 @@ export default function NamePage({ params }: Props) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
+            loading="eager"
           />
         </div>
         <p className="text-lg leading-relaxed text-gray-600">{post.body}</p>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { SearchBar } from "@/components/post/SearchBar";
@@ -6,7 +5,7 @@ import { PostCard } from "@/components/post/Card";
 import { useInfiniteScroll } from "@/hook/useInfiniteScoll";
 import { SkeletonPost } from "@/components/post/Skeleton";
 
-export default function PostsPage() {
+export default function ListOfPostsPage() {
   const { filteredPosts, hasMore, loading, observerRef, search, setSearch } =
     useInfiniteScroll();
 
