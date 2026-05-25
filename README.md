@@ -40,16 +40,18 @@ Pasos para levantar la app en desarrollo
 
 2. Una vez en la pantalla de listado se podra observar todas las publicaciones, con un scroll infinito que va acargando informacion cada vez que se llega al limite inferior de la pagina, en cada publicacion podremos encontrar el titulo, descripción, imagen y 3 botones.
 
-3. En el botón de `ver más`, al dar click lo redireccionara a la pantalla de publicacion por ID ('/listado/[id]'), donde se podra ver toda la informacion de dicha publicacion.
+3. En la pantalla de listado existe un input de tipo busqueda, en el cual al escribir se filtran las publicaciones por el titulo.
 
-4. En el botón del lapiz, se desplegara un modal con un formulario para poder editar la informaciópn de dicha publicacion.
+4. En el botón de `ver más`, al dar click lo redireccionara a la pantalla de publicacion por ID ('/listado/[id]'), donde se podra ver toda la informacion de dicha publicacion.
 
-5. En el botón de la basura, se desplegara un modal para confirmar la eliminación de dicha publicación.
+5. En el botón del lapiz, se desplegara un modal con un formulario para poder editar la informaciópn de dicha publicacion.
 
-6. En todo el flujo podremos observar un Navbar en el cual tenemos 3 redirecciones diferentes, al inicio, a las publicaciones y a crear una nueva publicación.
+6. En el botón de la basura, se desplegara un modal para confirmar la eliminación de dicha publicación.
 
-7. En el botón de `Nueva publicación`, sera redireccionado a la pantalla ('/nuevo'), en donde se visualizara un formulario con los inputs y validaciones necesarias para crear una nueva publicacion la cual se vera al inicio del listado.
+7. En todo el flujo podremos observar un Navbar en el cual tenemos 3 redirecciones diferentes, al inicio, a las publicaciones y a crear una nueva publicación.
 
-8. En la pantalla de nueva publicación al dar click en el boton de `cancelar`, sera redireccionado a la panatalla de publicaciones.
+8. En el botón de `Nueva publicación`, sera redireccionado a la pantalla ('/nuevo'), en donde se visualizara un formulario con los inputs y validaciones necesarias para crear una nueva publicacion la cual se vera al inicio del listado.
 
-9. En la pantalla de nueva publicación si se llena el formulario corrrectamente y se le da click en el botón `crear publicación`, esta sera creada correctamente y redireccionara al usuario a la pantalla de publicaciones con la publicacion creada al inicio del listado.
+9. En la pantalla de nueva publicación al dar click en el boton de `cancelar`, sera redireccionado a la panatalla de publicaciones.
+
+10. En la pantalla de nueva publicación si se llena el formulario corrrectamente y se le da click en el botón `crear publicación`, esta sera creada correctamente y redireccionara al usuario a la pantalla de publicaciones con la publicacion creada al inicio del listado.
