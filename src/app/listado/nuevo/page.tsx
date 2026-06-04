@@ -2,10 +2,10 @@
 
 import { Button, Input, Label, Spinner, TextArea } from "@heroui/react";
 import { useCreatePost } from "@/hook/useCreatePost";
+import { LinkButton } from "@/components/ui/LinkButton";
 
 export default function NewPostPage() {
-  const { errors, handleSubmit, loading, onSubmit, register, route } =
-    useCreatePost();
+  const { errors, handleSubmit, loading, onSubmit, register } = useCreatePost();
 
   if (loading) {
     return (
@@ -54,13 +54,13 @@ export default function NewPostPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-end">
-            <Button
+            <LinkButton
               className="w-full sm:w-auto"
               variant="danger-soft"
-              onPress={() => route.replace("/listado")}
+              href="/listado"
             >
               Cancelar
-            </Button>
+            </LinkButton>
             <Button
               type="submit"
               className="bg-[#008296] text-white w-full sm:w-auto"
