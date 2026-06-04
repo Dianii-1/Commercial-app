@@ -1,8 +1,9 @@
-import Link from "next/link";
-
+"use client";
 import { Button } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
+  const route = useRouter();
   return (
     <main className="flex min-h-screen items-center justify-center overflow-hidden bg-white px-2 md:px-6">
       <section className="max-w-full sm:max-w-3xl text-center">
@@ -19,14 +20,13 @@ export default function HomePage() {
           plataforma.
         </p>
 
-        <Link href="/listado">
-          <Button
-            size="lg"
-            className="mt-10 bg-[#008296] p-2 px-6 font-semibold text-white shadow-xl rounded-full cursor-pointer"
-          >
-            Ver todas las publicaciones
-          </Button>
-        </Link>
+        <Button
+          size="lg"
+          className="mt-10 bg-[#008296] p-2 px-6 font-semibold text-white shadow-xl rounded-full cursor-pointer"
+          onClick={() => route.push("/listado")}
+        >
+          Ver todas las publicaciones
+        </Button>
       </section>
     </main>
   );

@@ -2,11 +2,11 @@
 
 import { Post } from "@/types/post";
 import { Button, Card } from "@heroui/react";
-import Link from "next/link";
 import { EditPostModal } from "./EditPostModal";
 import { getPostImage } from "@/hook/useImagePost";
 import Image from "next/image";
 import { DeletePostModal } from "./DeletePostModal";
+import { useRouter } from "next/navigation";
 
 interface Props {
   post: Post;
@@ -14,6 +14,7 @@ interface Props {
 
 export const PostCard = ({ post }: Props) => {
   const imageUrl = getPostImage(post.id);
+  const roue = useRouter();
   return (
     <Card
       className="
@@ -53,14 +54,13 @@ export const PostCard = ({ post }: Props) => {
         </div>
 
         <Card.Footer className="mt-6 flex justify-between items-center shrink-0">
-          <Link href={`/listado/${post.id}`}>
-            <Button
-              size="sm"
-              className="bg-[#008296] text-white font-medium px-4"
-            >
-              Ver más
-            </Button>
-          </Link>
+          <Button
+            size="sm"
+            className="bg-[#008296] text-white font-medium px-4"
+            onClick={() => roue.push(`/listado/${post.id}`)}
+          >
+            Ver más
+          </Button>
           <div className="flex gap-4">
             <EditPostModal post={post} />
 
